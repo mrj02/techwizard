@@ -1,0 +1,106 @@
+﻿
+
+<section id="contact" class="contact">
+    <div class="section-heading text-center">
+        <h2>contact me</h2>
+    </div>
+    <div class="container">
+        <div class="contact-content">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-5 col-sm-6">
+                    <div class="single-contact-box">
+                        <div class="contact-form">
+                            @if (_Submited)
+                            {
+                                <div class="contact-add-head" >
+                                    <h3 style="color:green">Thank you for your message</h3>
+                                    <p></p>
+                                </div>
+                            }
+                            else
+                            {
+                                <EditForm Model="_message" OnValidSubmit="SendMessage" FormName="SndMsg" Enhance>
+                                    <DataAnnotationsValidator />
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <InputText type="text" class="form-control" @bind-Value="_message.Name" id="name" placeholder="Name*"  />
+                                                <ValidationMessage style="font-size:small;color:red;" For="@(()=>_message.Name)" />
+                                            </div><!--/.form-group-->
+                                        </div><!--/.col-->
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                <InputText type="email" class="form-control" @bind-Value="_message.Email" id="email" placeholder="Email*"  />
+                                                <ValidationMessage style="font-size:small;color:red;" For="@(()=>_message.Email)" />
+                                            </div><!--/.form-group-->
+                                        </div><!--/.col-->
+                                    </div><!--/.row-->
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <InputText type="text" class="form-control" @bind-Value="_message.Subject" id="subject" placeholder="Subject"  />
+                                                <ValidationMessage style="font-size:small;color:red;" For="@(()=>_message.Subject)" />
+                                            </div><!--/.form-group-->
+                                        </div><!--/.col-->
+                                    </div><!--/.row-->
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <InputTextArea class="form-control" rows="8" @bind-Value="_message.Text" id="comment" placeholder="Message"></InputTextArea>
+                                                <ValidationMessage style="font-size:small;color:red;" For="@(()=>_message.Text)" />
+                                            </div><!--/.form-group-->
+                                        </div><!--/.col-->
+                                    </div><!--/.row-->
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="single-contact-btn">
+                                                <button class="contact-btn" type="submit" >submit</button>
+                                            </div><!--/.single-single-contact-btn-->
+                                        </div><!--/.col-->
+                                    </div><!--/.row-->
+                                </EditForm>
+
+                                <!--/form-->
+                            }
+                            
+                        </div><!--/.contact-form-->
+                    </div><!--/.single-contact-box-->
+                </div><!--/.col-->
+                <div class="col-md-offset-1 col-md-5 col-sm-6">
+                    <div class="single-contact-box">
+                        <div class="contact-adress">
+                            <div class="contact-add-head">
+                                <h3>Mohammad Reza Jafari</h3>
+                                <p>Developer</p>
+                            </div>
+                            <div class="contact-add-info">
+                                <div class="single-contact-add-info">
+                                    <h3>phone</h3>
+                                    <p>+98-919-743-6851</p>
+                                </div>
+                                <div class="single-contact-add-info">
+                                    <h3>email</h3>
+                                    <p>mrj02@yahoo.com</p>
+                                </div>
+                                <div class="single-contact-add-info">
+                                    <h3>website</h3>
+                                    <p>www.github.io</p>
+                                </div>
+                            </div>
+                        </div><!--/.contact-adress-->
+                        <div class="hm-foot-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li><!--/li-->
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li><!--/li-->
+                            </ul><!--/ul-->
+                        </div><!--/.hm-foot-icon-->
+                    </div><!--/.single-contact-box-->
+                </div><!--/.col-->
+            </div><!--/.row-->
+        </div><!--/.contact-content-->
+    </div><!--/.container-->
+
+</section><!--/.contact-->
